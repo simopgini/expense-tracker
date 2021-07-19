@@ -69,22 +69,22 @@ const initialValues = {
 };
 
 const InputBox = (props) => {
-  const [values, setValues] = useState(initialValues);
+  const [state, setState] = useState(initialValues);
 
   // in this function we handle the text input change to update the state
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValues({
-      ...values,
-      [name]: value,
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value,
     });
   };
 
   // in this function we handle the button click and we call the addItem function
   function handleClick() {
-    if (values !== "") {
-      props.addItem(values);
-      setValues("");
+    if (state !== "") {
+      props.addItem(state);
+      setState("");
     }
   }
 
@@ -93,17 +93,17 @@ const InputBox = (props) => {
       <div className="flex px-4 mx-8 shadow-xl bg-white w-full h-12 rounded-2xl">
         <input
           type="text"
-          value={values.transaction}
+          value={state.transaction}
           onChange={handleChange}
           className="text-black w-full outline-none"
-          name="prova"
+          name="transaction"
         />
         <input
-          type="amount"
-          value={values.amount}
+          type="text"
+          value={state.amount}
           onChange={handleChange}
           className="text-black w-full outline-none"
-          name="numeri"
+          name="amount"
         />
       </div>
 
@@ -177,7 +177,7 @@ const TransactionList = () => {
 
         <button
           className="flex items-center justify-center font-semibold text-xl px-4 mx-8 shadow-xl bg-gradient-to-tl from-pink-500 to-blue-500 text-white w-5/6 h-12 rounded-2xl  transition duration-500 ease-in-out hover:opacity-95 transform hover:-translate-y-1"
-          onClick={handleClick}
+          // onClick={handleClick}
         >
           Add transaction
         </button>
