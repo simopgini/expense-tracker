@@ -23,7 +23,7 @@ const AddNewTransaction = (props) => {
     }
 
     // regex che controlla se la stringa contiene +, - o dei numeri. non accetta altri caratteri
-    if (!new RegExp(/^[\-\+\d]+$/).test(amount)) {
+    if (!new RegExp(/^[-+\d]+$/).test(amount)) {
       return;
     }
 
