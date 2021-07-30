@@ -9,15 +9,6 @@ const App = () => {
       name: "Grocery",
       amount: -12,
     },
-
-    {
-      name: "Salary",
-      amount: +1500,
-    },
-    {
-      name: "Singing Lesson",
-      amount: -10,
-    },
   ]);
 
   // function that adds the Item
