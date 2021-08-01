@@ -1,3 +1,6 @@
+This is a React Expense Tracker where you can add expenses or income. By creating a transaction history, it calculates the current balance. I've used Tailwind CSS to style the app.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
